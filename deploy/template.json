@@ -1,0 +1,10 @@
+{
+  "name": "action-client-credentials-integration-test",
+  "runtime": "node16",
+  "supported_triggers": [
+    {
+      "id": "credentials-exchange",
+      "version": "v2"
+    }
+  ]
+}
