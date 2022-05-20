@@ -1,19 +1,19 @@
-const { eventMock } = require("../__mocks__/event-client-credentials");
+const { makeEventMock } = require("../__mocks__/event-client-credentials");
 const { apiMock } = require("../__mocks__/api-client-credentials");
 
 const { onExecuteCredentialsExchange } = require("./integration.action");
 
 describe("Action integration", () => {
-  let consoleLogMock;
+  let consoleLogMock, eventMock;
 
   beforeEach(() => {
     consoleLogMock = jest.spyOn(console, "log").mockImplementation();
+    eventMock = makeEventMock();
   });
 
   afterEach(() => {
     consoleLogMock.mockRestore();
     jest.clearAllMocks();
-    eventMock.secrets = {};
   });
 
   describe("onExecutePostLogin", () => {
